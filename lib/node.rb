@@ -1,9 +1,3 @@
-class LinkedList
-  def initialize
-    
-  end
-end
-
 class Node
   def value
     nil
