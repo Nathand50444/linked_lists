@@ -1,7 +1,6 @@
 class LinkedList
   def initialize
     @list = ["nil"]
-    to_s
   end
 
   def append(value)
@@ -11,12 +10,20 @@ class LinkedList
       @list.insert(-2, value)
     end
     puts @list
-    to_s
   end
 
   def to_s
     puts "What should we add to our Linked List?"
     input = "( #{gets.chomp} ) ->"
-    append(input)
+    return input # For some reason it won't .append(input)
+  end
+
+  def prepend(value)
+    @list.prepend(value)
+    puts @list
+  end
+
+  def size
+    puts @list.length
   end
 end
