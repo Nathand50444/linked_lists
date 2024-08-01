@@ -9,21 +9,36 @@ class LinkedList
     else
       @list.insert(-2, value)
     end
-    puts @list
+    puts @list.join(" ")
   end
 
   def to_s
     puts "What should we add to our Linked List?"
     input = "( #{gets.chomp} ) ->"
-    return input # For some reason it won't .append(input)
+    return input
   end
 
   def prepend(value)
     @list.prepend(value)
-    puts @list
+    puts @list.join(" ")
   end
 
   def size
-    puts @list.length
+    return @list.length
   end
+
+  def head
+    return @list[0]
+  end
+
+  def tail
+    return @list[-1]
+  end
+
+  def at(index)
+    return @list[index]
+  end
+
+# I want these to return the node only and not the surrounding "( ) ->"
+
 end
