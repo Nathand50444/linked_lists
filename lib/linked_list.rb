@@ -32,7 +32,7 @@ class LinkedList
   end
 
   def tail
-    return @list[-1]
+    return @list[-2]
   end
 
   def at(index)
@@ -40,5 +40,10 @@ class LinkedList
   end
 
 # I want these to return the node only and not the surrounding "( ) ->"
+
+  def pop
+    @list.delete_at(-2)
+    #UNLESS there is only "nil" then it won't delete.
+  end
 
 end
