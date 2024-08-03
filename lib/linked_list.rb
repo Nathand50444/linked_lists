@@ -39,11 +39,23 @@ class LinkedList
     return @list[index]
   end
 
-# I want these to return the node only and not the surrounding "( ) ->"
-
   def pop
-    @list.delete_at(-2)
-    #UNLESS there is only "nil" then it won't delete.
+    if @list.length >= 2
+      @list.delete_at(-2)
+    end
   end
 
+  def contains(element)
+    @list.include?("( #{element} ) ->")
+  end
+
+  def find(value)
+    @list.each_with_index { |element, index| 
+    if element == "( #{value} ) ->"
+      puts index
+    else
+      puts "Value not found."
+    end
+    }
+  end
 end
