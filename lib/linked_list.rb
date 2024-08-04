@@ -3,23 +3,19 @@ class LinkedList
     @list = ["nil"]
   end
 
-  def append(value)
-    if @list.length == 1
-      @list.prepend(value)
-    else
-      @list.insert(-2, value)
-    end
+  def append(word)
+    value = to_string(word)
+    @list.insert(-2, value)
     puts @list.join(" ")
   end
 
-  def to_s
-    puts "What should we add to our Linked List?"
-    input = "( #{gets.chomp} ) ->"
+  def to_string(word)
+    input = "( #{word} ) ->"
     return input
   end
 
   def prepend(value)
-    @list.prepend(value)
+    @list.prepend("( #{value} ) ->")
     puts @list.join(" ")
   end
 
@@ -57,5 +53,13 @@ class LinkedList
       puts "Value not found."
     end
     }
+  end
+
+  def insert_at(index, value)
+    @list.insert(index, "( #{value} ) ->")
+  end
+
+  def delete_at(index)
+    @list.delete_at(index)
   end
 end
